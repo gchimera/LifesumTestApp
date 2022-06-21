@@ -44,6 +44,7 @@
 		D2C151A32860C6E700884A1F /* LifesumTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifesumTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C151A72860C6E700884A1F /* LifesumTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifesumTestAppUITests.swift; sourceTree = "<group>"; };
 		D2C151A92860C6E700884A1F /* LifesumTestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifesumTestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2FF4B4328612E1800D3EAB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,8 @@
 		D2C1518B2860C6E500884A1F /* LifesumTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2FF4B4328612E1800D3EAB7 /* Info.plist */,
+				D2FF4B4028612DD200D3EAB7 /* Resources */,
 				D2C1518C2860C6E500884A1F /* LifesumTestAppApp.swift */,
 				D2C1518E2860C6E500884A1F /* ContentView.swift */,
 				D2C151902860C6E700884A1F /* Assets.xcassets */,
@@ -125,6 +128,13 @@
 				D2C151A92860C6E700884A1F /* LifesumTestAppUITestsLaunchTests.swift */,
 			);
 			path = LifesumTestAppUITests;
+			sourceTree = "<group>";
+		};
+		D2FF4B4028612DD200D3EAB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +430,7 @@
 				DEVELOPMENT_TEAM = PN2T5H7675;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LifesumTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +460,7 @@
 				DEVELOPMENT_TEAM = PN2T5H7675;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LifesumTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
