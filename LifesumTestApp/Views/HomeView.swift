@@ -21,8 +21,10 @@ struct HomeView: View {
         VStack(alignment: .center, spacing: 90.0) {
             Circle()
                 .fill(
+                    // gradient circular color
                     LinearGradient(colors: [orangeGradient,redGradient], startPoint: .leading, endPoint: .bottomTrailing)
                 )
+                // specic sizes as per documentation
                 .frame(maxWidth: 362.1, maxHeight: 362.1)
                 .clipped()
                 .shadow(color: Color(.tertiaryLabel).opacity(0.5), radius: 8, x: 0, y: 8)
@@ -65,6 +67,7 @@ struct HomeView: View {
                     customLabel(bodyText: "MORE INFO", color: .white).onTapGesture {
                         let _ = viewModel.performRequest()
                     }
+                    // handle error request within alert
                     .alert("\($viewModel.alertText.wrappedValue ?? "unknown error")! \n an error occured with Food id \(String(describing: $viewModel.foodId.wrappedValue)) request, please try again", isPresented: $viewModel.alert) {
                         Button("OK", role: .cancel) { }
                     }
