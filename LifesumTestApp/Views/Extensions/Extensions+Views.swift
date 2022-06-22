@@ -17,22 +17,15 @@ extension View {
             .clipped()
             .multilineTextAlignment(.center)
             .lineLimit(1)
+            .scaledToFill()
     }
     
     func customValueField(bodyText: Any?, color: Color? = nil, size: Double? = nil, percentage: Bool) -> some View {
-        if let body = bodyText {
-            return Text(String(describing: "\(body)\(percentage ? "%" : "")"))
-                .foregroundColor(color)
-                .font(.system(size: size ?? 18.6, weight: .regular, design: .default))
-                .clipped()
-        }
-        else {
-            return Text("")
-                .foregroundColor(color)
-                .font(.system(size: size ?? 18.6, weight: .regular, design: .default))
-                .clipped()
-        }
-        
+        return Text(String(describing: "\(bodyText ?? "")\(percentage ? "%" : "")"))
+            .scaledToFill()
+            .foregroundColor(color ?? Color(red: 108/255, green: 108/255, blue: 108/255))
+            .font(.system(size: size ?? 18.6, weight: .regular, design: .default))
+            .clipped()
     }
     
     func customDivider(size: Double? = nil) -> some View {

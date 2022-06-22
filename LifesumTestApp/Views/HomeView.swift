@@ -23,10 +23,9 @@ struct HomeView: View {
                 .fill(
                     LinearGradient(colors: [orangeGradient,redGradient], startPoint: .leading, endPoint: .bottomTrailing)
                 )
-                .frame(width: 362.1, height: 362.1)
+                .frame(maxWidth: 362.1, maxHeight: 362.1)
                 .clipped()
                 .shadow(color: Color(.tertiaryLabel).opacity(0.5), radius: 8, x: 0, y: 8)
-                .animation(.easeOut(duration: 30.0), value: 30.0)
             
                 .overlay(Group {
                     VStack {
@@ -39,7 +38,6 @@ struct HomeView: View {
                         
                         customLabel(bodyText: "Calories per serving", color: .white).italic()
                     }
-                    .padding(.horizontal, 60)
                 }, alignment: .center)
             HStack(alignment: .center) {
                 VStack {
