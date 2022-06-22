@@ -40,12 +40,12 @@ class Response: Codable {
     let fat: Double?
     let saturatedfat: Double?
     let unsaturatedfat: Double?
-    let fiber: Int?
+    let fiber: Double?
     let cholesterol: Double?
     let sugar: Double?
     let sodium: Double?
     let potassium: Double?
-    let gramsperserving: Int?
+    let gramsperserving: Double?
     let pcstext: String?
 
     enum CodingKeys: String, CodingKey {
@@ -65,7 +65,7 @@ class Response: Codable {
         case pcstext
     }
 
-    init(title: String?, calories: Int?, carbs: Double?, protein: Double?, fat: Double?, saturatedfat: Double?, unsaturatedfat: Double?, fiber: Int?, cholesterol: Double?, sugar: Double?, sodium: Double?, potassium: Double?, gramsperserving: Int?, pcstext: String?) {
+    init(title: String?, calories: Int?, carbs: Double?, protein: Double?, fat: Double?, saturatedfat: Double?, unsaturatedfat: Double?, fiber: Double?, cholesterol: Double?, sugar: Double?, sodium: Double?, potassium: Double?, gramsperserving: Double?, pcstext: String?) {
         self.title = title
         self.calories = calories
         self.carbs = carbs

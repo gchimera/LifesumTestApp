@@ -18,6 +18,7 @@
 		D2FF4B4D28622B9300D3EAB7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF4B4C28622B9300D3EAB7 /* HomeView.swift */; };
 		D2FF4B4F28622C7C00D3EAB7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF4B4E28622C7C00D3EAB7 /* HomeViewModel.swift */; };
 		D2FF4B522863356400D3EAB7 /* Extensions+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF4B512863356400D3EAB7 /* Extensions+Views.swift */; };
+		D2FF4B562863692D00D3EAB7 /* OpenweatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF4B552863692D00D3EAB7 /* OpenweatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D2FF4B4C28622B9300D3EAB7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D2FF4B4E28622C7C00D3EAB7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D2FF4B512863356400D3EAB7 /* Extensions+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Views.swift"; sourceTree = "<group>"; };
+		D2FF4B552863692D00D3EAB7 /* OpenweatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenweatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +105,14 @@
 		D2C1518B2860C6E500884A1F /* LifesumTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2C1518C2860C6E500884A1F /* LifesumTestAppApp.swift */,
+				D2C1518E2860C6E500884A1F /* ContentView.swift */,
+				D2FF4B552863692D00D3EAB7 /* OpenweatherAPI.swift */,
 				D2FF4B472862085600D3EAB7 /* Views */,
 				D2FF4B462862084F00D3EAB7 /* Models */,
 				D2FF4B4828620D5A00D3EAB7 /* ViewModules */,
-				D2FF4B4928620D7D00D3EAB7 /* Networking */,
 				D2FF4B4328612E1800D3EAB7 /* Info.plist */,
 				D2FF4B4028612DD200D3EAB7 /* Resources */,
-				D2C1518C2860C6E500884A1F /* LifesumTestAppApp.swift */,
-				D2C1518E2860C6E500884A1F /* ContentView.swift */,
-				D2C151902860C6E700884A1F /* Assets.xcassets */,
 				D2C151922860C6E700884A1F /* Preview Content */,
 			);
 			path = LifesumTestApp;
@@ -145,6 +146,7 @@
 		D2FF4B4028612DD200D3EAB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D2C151902860C6E700884A1F /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,13 +174,6 @@
 				D2FF4B4E28622C7C00D3EAB7 /* HomeViewModel.swift */,
 			);
 			path = ViewModules;
-			sourceTree = "<group>";
-		};
-		D2FF4B4928620D7D00D3EAB7 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		D2FF4B502863352D00D3EAB7 /* Extensions */ = {
@@ -322,6 +317,7 @@
 				D2C1518F2860C6E500884A1F /* ContentView.swift in Sources */,
 				D2FF4B4D28622B9300D3EAB7 /* HomeView.swift in Sources */,
 				D2FF4B522863356400D3EAB7 /* Extensions+Views.swift in Sources */,
+				D2FF4B562863692D00D3EAB7 /* OpenweatherAPI.swift in Sources */,
 				D2FF4B4B286229EE00D3EAB7 /* HomeModel.swift in Sources */,
 				D2FF4B4F28622C7C00D3EAB7 /* HomeViewModel.swift in Sources */,
 				D2C1518D2860C6E500884A1F /* LifesumTestAppApp.swift in Sources */,

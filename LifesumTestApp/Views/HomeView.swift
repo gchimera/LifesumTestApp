@@ -10,26 +10,29 @@ import SwiftUI
 
 struct HomeView: View {
     
+    // Circle colors
+    let orangeGradient = Color(red: 243/255, green: 167/255, blue: 78/255)
+    let redGradient = Color(red: 237/255, green: 84/255, blue: 96/255)
+    
     @StateObject private var viewModel = HomeViewModel()
-
+    
     var body: some View {
         
-        VStack(spacing: 90) {
+        VStack() {
             Circle()
                 .fill(
-                    LinearGradient(colors: [Color(red: 243/255, green: 167/255, blue: 78/255),Color(red: 237/255, green: 84/255, blue: 96/255)], startPoint: .leading, endPoint: .bottomTrailing)
+                    LinearGradient(colors: [orangeGradient,redGradient], startPoint: .leading, endPoint: .bottomTrailing)
                 )
-                .frame(width: 271, height: 271)
+                .frame(width: 362.1, height: 362.1)
                 .clipped()
-                .foregroundColor(Color.red)
                 .shadow(color: Color(.tertiaryLabel).opacity(0.5), radius: 8, x: 0, y: 8)
+                .animation(.easeOut(duration: 30.0), value: 30.0)
             
                 .overlay(Group {
                     VStack {
-                        customValueField(bodyText: $viewModel.results.wrappedValue.response?.title, color: .white, size: 18.0, percentage: false)
-                        Divider()
-                            .padding(.bottom, 1.0)
-                            .background(Color.white)
+                        customValueField(bodyText: $viewModel.results.wrappedValue.response?.title, color: .white, percentage: false)
+
+                        customDivider(size: 100.1)
                         
                         customValueField(bodyText: $viewModel.results.wrappedValue.response?.calories, color: .white, size: 40.0, percentage: false)
                             .padding(.top, 10.0)
@@ -38,21 +41,21 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, 60)
                 }, alignment: .center)
-            HStack {
+            HStack(alignment: .center) {
                 VStack {
                     customLabel(bodyText: "CARBS")
-                    Divider()
+                    customDivider()
                     customValueField(bodyText: $viewModel.results.wrappedValue.response?.carbs, percentage: true)
                 }
                 VStack {
                     customLabel(bodyText: "PROTEIN")
-                    Divider()
+                    customDivider()
                     customValueField(bodyText: $viewModel.results.wrappedValue.response?.protein, percentage: true)
                     
                 }
                 VStack {
                     customLabel(bodyText: "FAT")
-                    Divider()
+                    customDivider()
                     customValueField(bodyText: $viewModel.results.wrappedValue.response?.fat, percentage: true)
                 }
             }
@@ -62,14 +65,15 @@ struct HomeView: View {
                 .shadow(color: Color(.sRGBLinear, red: 0/255, green: 0/255, blue: 0/255).opacity(0.5), radius: 8, x: 0, y: 6)
                 .overlay(Group {
                     customLabel(bodyText: "MORE INFO", color: .white).onTapGesture {
-                        viewModel.performRequest()
+                        viewModel.performSearch()
                     }
-                    .alert("Food details not found, please try again", isPresented: $viewModel.alert) {
-                                Button("OK", role: .cancel) { }
-                            }
+                    .alert("Food id \(String(describing: $viewModel.foodId.wrappedValue)) details not found, please try again", isPresented: $viewModel.alert) {
+                        Button("OK", role: .cancel) { }
+                    }
                 }, alignment: .center)
         }
-        .padding(.all, 60)
+        .frame(maxHeight: .infinity)
+        //.padding(.horizontal, 60)
     }
     
     
