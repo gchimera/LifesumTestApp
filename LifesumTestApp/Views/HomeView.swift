@@ -18,7 +18,7 @@ struct HomeView: View {
     
     var body: some View {
         
-        VStack() {
+        VStack(alignment: .center, spacing: 90.0) {
             Circle()
                 .fill(
                     LinearGradient(colors: [orangeGradient,redGradient], startPoint: .leading, endPoint: .bottomTrailing)
@@ -31,7 +31,7 @@ struct HomeView: View {
                 .overlay(Group {
                     VStack {
                         customValueField(bodyText: $viewModel.results.wrappedValue.response?.title, color: .white, percentage: false)
-
+                        
                         customDivider(size: 100.1)
                         
                         customValueField(bodyText: $viewModel.results.wrappedValue.response?.calories, color: .white, size: 40.0, percentage: false)
@@ -65,19 +65,14 @@ struct HomeView: View {
                 .shadow(color: Color(.sRGBLinear, red: 0/255, green: 0/255, blue: 0/255).opacity(0.5), radius: 8, x: 0, y: 6)
                 .overlay(Group {
                     customLabel(bodyText: "MORE INFO", color: .white).onTapGesture {
-                        viewModel.performSearch()
+                        let _ = viewModel.performRequest()
                     }
-                    .alert("Food id \(String(describing: $viewModel.foodId.wrappedValue)) details not found, please try again", isPresented: $viewModel.alert) {
+                    .alert("\($viewModel.alertText.wrappedValue ?? "unknown error")! \n an error occured with Food id \(String(describing: $viewModel.foodId.wrappedValue)) request, please try again", isPresented: $viewModel.alert) {
                         Button("OK", role: .cancel) { }
                     }
                 }, alignment: .center)
         }
-        .frame(maxHeight: .infinity)
-        //.padding(.horizontal, 60)
+        .padding(.horizontal, 60)
     }
-    
-    
-    
-    
 }
 

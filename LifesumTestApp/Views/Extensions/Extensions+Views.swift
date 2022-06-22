@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-
+    
     func customLabel(bodyText: String, color: Color? = nil, size: Double? = nil) -> some View {
         return Text(bodyText)
             .fixedSize(horizontal: false, vertical: true)
@@ -42,6 +42,6 @@ extension View {
             .background(Color.white)
             .padding(.horizontal, 10.0)
     }
-
+    
     
 }

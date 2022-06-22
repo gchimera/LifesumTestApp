@@ -1,6 +1,6 @@
 //
-//  OpenweatherAPI.swift
-//  WeatherApp
+//  GenericRequestAPI.swift
+//  LifesumTestApp
 //
 //  Created by Guglielmo Chimera on 13/06/22.
 //
@@ -12,22 +12,22 @@ struct RequestUrl {
     static let path = "v2/foodipedia/codetest?foodid="
 }
 
+//AppError enum which shows all possible errors
+enum AppError: Error {
+    case networkError(Error)
+    case dataNotFound
+    case jsonParsingError(Error)
+    case invalidStatusCode(Int)
+}
+
 class GenericRequestAPI {
     
-    //AppError enum which shows all possible errors
-    enum AppError: Error {
-        case networkError(Error)
-        case dataNotFound
-        case jsonParsingError(Error)
-        case invalidStatusCode(Int)
-    }
-
     //Result enum to show success or failure
     enum Result<T> {
         case success(T)
         case failure(AppError)
     }
-
+    
     static let shared = GenericRequestAPI() // Singleton
     
     //dataRequest which sends request to given URL and convert to Decodable Object
@@ -66,7 +66,5 @@ class GenericRequestAPI {
         
         task.resume()
     }
-
-    
 }
 

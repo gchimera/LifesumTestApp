@@ -11,11 +11,12 @@ class HomeViewModel: ObservableObject {
     
     @Published var results = HomeModel()
     @Published var alert = false
+    @Published var alertText: String?
     @Published var foodId = 0
     
-    func performSearch() -> HomeModel {
+    func performRequest() -> HomeModel {
         
-        // set random id
+        // Set random id
         self.foodId = Int.random(in: 1...99)
         
         print(foodId)
@@ -25,16 +26,32 @@ class HomeViewModel: ObservableObject {
         { result in
             switch result {
             case .success(let object):
-                print(object)
-                DispatchQueue.main.async { [weak self] in
-                    self?.results = object
-                    self?.alert = false
+                print(object.meta!)
+                switch object.meta?.code {
+                case 200:
+                    print("Success")
+                    DispatchQueue.main.async { [weak self] in
+                        self?.results = object
+                        self?.alert = false
+                    }
+                default:
+                    DispatchQueue.main.async { [weak self] in
+                        self?.alert = true
+                        self?.alertText = "Bad request"
+                        // reset results
+                        self?.results = HomeModel()
+                    }
                 }
+                
+                
             case .failure(let error):
                 print(error)
-                self.alert = true
-                // reset results
-                self.results = HomeModel()
+                DispatchQueue.main.async { [weak self] in
+                    self?.alert = true
+                    self?.alertText = "Bad connection"
+                    // reset results
+                    self?.results = HomeModel()
+                }
             }
         }
         
