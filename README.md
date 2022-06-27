@@ -2,6 +2,9 @@
 
 Native IOS App written in SwiftUI and MVVM pattern.
 
+ minimum requirements: IOS 15.0, XCode 13.4.1
+
+ 
 - Only portrait orientation.
 
 - Assets and colors as provided by the company.
@@ -13,3 +16,4 @@ Native IOS App written in SwiftUI and MVVM pattern.
 - HomeViewModel.swift -> Business logic.
 
 - GenericRequestAPI.swift contains the URLs requests and perform request func. 
+ 
