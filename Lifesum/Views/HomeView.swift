@@ -38,7 +38,7 @@ struct HomeView: View {
                         customValueField(bodyText: $viewModel.results.wrappedValue.response?.calories, color: .white, size: 40.0, percentage: false)
                             .padding(.top, 10.0)
                         
-                        customLabel(bodyText: "Calories per serving", color: .white).italic()
+                        italicLabel(bodyText: "Calories per serving", color: .white)
                     }
                 }, alignment: .center)
             HStack(alignment: .center) {

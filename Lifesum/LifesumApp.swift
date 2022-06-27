@@ -1,14 +1,14 @@
 //
-//  LifesumTestAppApp.swift
-//  LifesumTestApp
+//  LifesumApp.swift
+//  Lifesum
 //
-//  Created by Guglielmo Chimera on 20/06/22.
+//  Created by Guglielmo Chimera on 27/06/22.
 //
 
 import SwiftUI
 
 @main
-struct LifesumTestAppApp: App {
+struct LifesumApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
